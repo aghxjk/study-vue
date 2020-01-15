@@ -30,7 +30,9 @@ export default {
           password: this.loginForm.password
         })
         .then(successResponse => {
-          if (successResponse === 200) {
+          // 后端返回的json结果赋值给successResponse.data
+          // 通过successResponse.data.code获取json中对应的code
+          if (successResponse.data.code === 200) {
             this.$router.replace({path: '/index'})
           }
         })

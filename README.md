@@ -28,4 +28,7 @@ npm test
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
-[学习Web开发](https://developer.mozilla.org/zh-CN/docs/learn)
+
+[vue:RUNOOB.COM](https://www.runoob.com/vue2/vue-tutorial.html)
+
+[vue工程参考](https://github.com/Antabot/White-Jotter)
