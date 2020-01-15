@@ -32,3 +32,5 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 [vue:RUNOOB.COM](https://www.runoob.com/vue2/vue-tutorial.html)
 
 [vue工程参考](https://github.com/Antabot/White-Jotter)
+
+[Element 的官方地址](http://element-cn.eleme.io/#/zh-CN)
