@@ -1,4 +1,6 @@
 <template>
+  <!-- 这个文件称为“根组件”，因为其它的组件又都包含在这个组件中。
+   vue 文件是一种自定义文件类型，在结构上类似 html，一个 .vue 文件即是一个 vue 组件。-->
   <!-- 这个 id=app 只是跟下面的 css 对应 -->
   <div id="app">
     <img src="./assets/logo.png">
