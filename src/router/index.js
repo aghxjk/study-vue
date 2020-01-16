@@ -7,21 +7,21 @@ import Login from '@/components/Login.vue'
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    },
-    {
-      path: '/login',
-      name: 'Login',
-      component: Login
-    },
-    {
-      path: '/index',
-      name: 'AppIndex',
-      component: AppIndex
-    }
-  ]
+    routes: [
+        {
+            path: '/',
+            name: 'HelloWorld',
+            component: HelloWorld
+        },
+        {
+            path: '/login',
+            name: 'Login',
+            component: Login
+        },
+        {
+            path: '/index',
+            name: 'AppIndex',
+            component: AppIndex
+        }
+    ]
 })
