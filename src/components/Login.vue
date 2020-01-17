@@ -39,6 +39,7 @@ export default {
     },
     methods: {
         login () {
+            var _this = this
             this.$axios
                 .post('/login', {
                     username: this.loginForm.username,
@@ -47,11 +48,27 @@ export default {
                 .then(successResponse => {
                     // 后端返回的json结果赋值给successResponse.data
                     // 通过successResponse.data.code获取json中对应的code
+
+                    console.log(successResponse.data.code)
                     if (successResponse.data.code === 200) {
-                        this.$router.replace({ path: '/index' })
+                        // 将login登录页面输入的用户名密码,通过vuex.Store.commit调用./store/index.js中的login()函数保持变量到浏览器中
+                        // 注意，虽然./store/index.js中定义的login()方法有两个入参,但此次只需要传递一个待保存的数据_this.loginForm即可
+                        _this.$store.commit('login', _this.loginForm)
+                        if (_this.$router.history.current.path === '/login') {
+                            console.log('直接调用/login')
+                            this.$router.replace({ path: 'index' })
+                        } else {
+                            var path = _this.$router.history.current.query.redirect
+                            console.log('登录成功,跳转至: ' + path)
+                            this.$router.replace({ path: path })
+                        }
+                    } else {
+                        console.log('login in error:' + successResponse.data.code)
                     }
                 })
-                .catch(failResponse => {})
+                .catch(failResponse => {
+                    console.log(failResponse)
+                })
         }
     }
 }

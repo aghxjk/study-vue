@@ -17,11 +17,30 @@ axios.defaults.baseURL = 'http://localhost:8443/api'
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 
+router.beforeEach((to, from, next) => {
+    // 判断访问的路径是否需要登录
+    if (to.meta.requireAuth) {
+        // 判断 store 里有没有存储 user 的信息，如果存在，则放行，
+        // 否则跳转到登录页面，并存储访问的页面路径（以便在登录后跳转到访问页）
+        if (store.state.user.username) {
+            next()
+        } else {
+            next({
+                path: 'login',
+                query: {redirect: to.fullPath}
+            })
+        }
+    } else {
+        next()
+    }
+})
+
 /* eslint-disable no-new */
 new Vue({
     // el 属性提供一个在页面上已存在的 DOM 元素作为 Vue 对象的挂载目标
     // 即：index.html 中id=myApp的div元素
     el: '#myApp',
+    render: h => h(App),
     // router 代表该对象包含 Vue Router，并使用项目中定义的路由
     router,
     store,
