@@ -19,6 +19,7 @@ Vue.use(ElementUI)
 
 router.beforeEach((to, from, next) => {
     // 判断访问的路径是否需要登录
+    // 见./router/index.js中的路由配置
     if (to.meta.requireAuth) {
         // 判断 store 里有没有存储 user 的信息，如果存在，则放行，
         // 否则跳转到登录页面，并存储访问的页面路径（以便在登录后跳转到访问页）
