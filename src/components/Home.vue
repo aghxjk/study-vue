@@ -1,6 +1,7 @@
 <template>
     <div>
-        <nav-menu></nav-menu>
+        <!-- <nav-menu></nav-menu> -->
+        <NavMenu></NavMenu>
         <router-view/>
     </div>
 </template>
@@ -9,7 +10,7 @@
 import NavMenu from './common/NavMenu'
 export default {
     name: 'Home',
-    components: {NavMenu}
+    components: { NavMenu }
 }
 </script>
 

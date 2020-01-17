@@ -40,4 +40,8 @@ export default {
     span {
         pointer-events: none;
     }
+
+    .el-menu-item {
+        font-size: 20px
+    }
 </style>

@@ -41,7 +41,7 @@ new Vue({
     // el 属性提供一个在页面上已存在的 DOM 元素作为 Vue 对象的挂载目标
     // 即：index.html 中id=myApp的div元素
     el: '#myApp',
-    render: h => h(App),
+    // render: h => h(App),
     // router 代表该对象包含 Vue Router，并使用项目中定义的路由
     router,
     store,
