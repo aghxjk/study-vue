@@ -1,10 +1,14 @@
 <template>
   <el-menu
     class="categories"
-    default-active="0"
+    :default-active="0"
     @select="handleSelect"
     active-text-color="red">
-    <el-menu-item index="0">
+    <el-menu-item v-for="(item, id) in kindList" :key="id" :index="id">
+        <i class="el-icon-menu"></i>
+        <span slot="title">{{item.name}}</span>
+    </el-menu-item>
+    <!-- <el-menu-item index="0">
       <i class="el-icon-menu"></i>
       <span slot="title">全部</span>
     </el-menu-item>
@@ -31,13 +35,26 @@
     <el-menu-item index="6">
       <i class="el-icon-menu"></i>
       <span slot="title">科技</span>
-    </el-menu-item>
+    </el-menu-item> -->
   </el-menu>
 </template>
 
 <script>
 export default {
-    name: 'SideMenu'
+    name: 'SideMenu',
+    data () {
+        return {
+            kindList: [
+                {name: '全部', id: 0},
+                {name: '文学', id: 1},
+                {name: '流行', id: 2},
+                {name: '文化', id: 3},
+                {name: '生活', id: 4},
+                {name: '经管', id: 5},
+                {name: '科技', id: 6}
+            ]
+        }
+    }
 }
 </script>
 

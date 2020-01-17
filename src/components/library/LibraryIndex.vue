@@ -1,7 +1,7 @@
 <template>
   <el-container style="margin-left:0px">
     <el-aside style="width:200px; margin-top:20px">
-      <switch></switch>
+      <!-- <switch></switch> -->
       <SideMenu></SideMenu>
     </el-aside>
     <el-main>
